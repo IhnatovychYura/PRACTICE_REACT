@@ -16,11 +16,10 @@ class App extends Component {
                 <div>
                     <div>
                         <Link to={'/people'}> People </Link>
-                        <Link to={'/home'}> home </Link>
+                        <Link to={'/home'}> Home </Link>
                     </div>
 
                     <Switch>
-
                         <Route path={'/people'} render={() => {
                             return <AllPeopleComponent/>;
                         }}/>

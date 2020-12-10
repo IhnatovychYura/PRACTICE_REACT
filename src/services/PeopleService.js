@@ -1,5 +1,5 @@
 class UserService {
-    url = 'https://jsonplaceholder.typicode.com/users'
+    url = 'https://swapi.dev/api/people'
 
     getAllPeople() {
         return fetch(this.url)

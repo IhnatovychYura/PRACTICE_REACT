@@ -5,28 +5,23 @@ import PeopleComponent from "../people/PeopleComponent";
 class AllPeopleComponent extends Component {
 
     peopleService = new PeopleService()
-
     state = {people: []}
 
     async componentDidMount() {
-        let users = await this.peopleService.getAllPeople();
-        this.setState({people: users});
+        let ppl = await this.peopleService.getAllPeople();
+        this.setState({people: ppl});
     }
 
     render() {
 
-        let {people} =this.state
+        let {people} = this.state
         console.log(people);
 
         return (
             <div>
                 <h1>All People from StarWars</h1>
-                {
-                    people.map(value => (<PeopleComponent
-                        people={value}
-                        key={value.id}
-                        />))
-                }
+
+                {people.map(value => (<PeopleComponent people={value} key={value.id}/>)) }
 
             </div>
         );
